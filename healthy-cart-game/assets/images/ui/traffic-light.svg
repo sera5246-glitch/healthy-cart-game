@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 160" width="80" height="160">
+  <defs>
+    <filter id="glowGreen" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <!-- Traffic Light Housing -->
+  <rect x="10" y="8" width="60" height="144" rx="20" fill="url(#bodyGrad)" stroke="#64748b" stroke-width="3"/>
+  <rect x="36" y="2" width="8" height="6" fill="#475569"/>
+  <!-- Visors -->
+  <path d="M 22 26 Q 40 18 58 26" fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 22 72 Q 40 64 58 72" fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 22 118 Q 40 110 58 118" fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+  <!-- Red Light (Danger/High) -->
+  <circle cx="40" cy="34" r="16" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <circle cx="36" cy="30" r="5" fill="#fca5a5" opacity="0.8"/>
+  <!-- Yellow Light (Caution/Medium) -->
+  <circle cx="40" cy="80" r="16" fill="#eab308" stroke="#a16207" stroke-width="2"/>
+  <circle cx="36" cy="76" r="5" fill="#fef08a" opacity="0.8"/>
+  <!-- Green Light (Safe/Low) -->
+  <circle cx="40" cy="126" r="16" fill="#22c55e" stroke="#15803d" stroke-width="2" filter="url(#glowGreen)"/>
+  <circle cx="36" cy="122" r="5" fill="#bbf7d0" opacity="0.9"/>
+</svg>

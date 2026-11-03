@@ -1,0 +1,397 @@
+/**
+ * healthy-cart-game / css / layout.css
+ * 마트 매대, 장바구니 카트, 돋보기 레이어 그리드/플렉스 배치
+ */
+
+/* Main Application Shell */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  background: url('../assets/images/background/mart-bg.svg') no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Supermarket Store Header */
+.mart-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 3px solid #10b981;
+  box-shadow: var(--shadow-sm);
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.brand-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #065f46;
+  line-height: 1.2;
+}
+
+.brand-subtitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+/* Header Controls & Status */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Mission Banner (Top Alert bar with Mascot) */
+.mission-section {
+  max-width: 1280px;
+  margin: 16px auto 8px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.mission-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  border: 2px solid #86efac;
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-mascot {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+.mission-content {
+  flex: 1;
+}
+
+.mission-level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #10b981;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 6px;
+}
+
+.mission-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.mission-desc {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.mission-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  min-width: 150px;
+}
+
+.mission-progress-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #065f46;
+}
+
+.mission-progress-bar {
+  width: 140px;
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.mission-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+/* Category Filter Bar */
+.category-filter-bar {
+  max-width: 1280px;
+  margin: 10px auto;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+/* Main Workspace Grid (Shelves + Cart Dock) */
+.main-viewport {
+  max-width: 1280px;
+  margin: 0 auto 30px;
+  padding: 0 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Mart Shelves Section */
+.shelves-section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.shelf-tier {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 20px 20px 0;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.shelf-tier-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px dashed #cbd5e1;
+}
+
+.shelf-tier-title h3 {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #334155;
+}
+
+.shelf-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+/* Realistic Wooden Shelf Base at bottom of each tier */
+.shelf-wood-base {
+  height: 22px;
+  background: url('../assets/images/background/shelf-wood.svg') no-repeat center bottom;
+  background-size: 100% 100%;
+  margin: 0 -20px;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: 0 6px 12px rgba(120, 53, 15, 0.25);
+}
+
+/* Right Side: Healthy Cart Dock */
+.cart-dock {
+  background: #ffffff;
+  border: 2px solid #16a34a;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 86px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 110px);
+  overflow: hidden;
+}
+
+.cart-dock-header {
+  background: linear-gradient(135deg, #15803d, #16a34a);
+  color: #ffffff;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-dock-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.cart-dock-title svg {
+  width: 28px;
+  height: 28px;
+}
+
+.cart-count-badge {
+  background: #facc15;
+  color: #78350f;
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* Cart Drop Target Area */
+.cart-items-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 200px;
+  background: #f8fafc;
+}
+
+.cart-empty-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 16px;
+  color: #64748b;
+  gap: 12px;
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  margin: auto 0;
+}
+
+.cart-empty-placeholder svg {
+  width: 56px;
+  height: 56px;
+  opacity: 0.4;
+}
+
+/* Real-time Cart Nutrition Meter Footer */
+.cart-nutrition-summary {
+  background: #ffffff;
+  border-top: 2px solid #e2e8f0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-meter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.cart-traffic-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart-action-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.cart-action-btn:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.45);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .main-viewport {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-dock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    max-height: 55vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    z-index: 95;
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.18);
+  }
+
+  .cart-dock.collapsed .cart-items-container,
+  .cart-dock.collapsed .cart-nutrition-summary {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .mart-header {
+    padding: 10px 16px;
+  }
+
+  .brand-title {
+    font-size: 1.15rem;
+  }
+
+  .mission-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mission-stats {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .shelf-cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}

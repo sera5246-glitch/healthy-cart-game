@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="ramenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="60%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <filter id="ramenShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Bag Body -->
+  <rect x="35" y="35" width="130" height="170" rx="10" fill="url(#ramenGrad)" filter="url(#ramenShadow)"/>
+  <!-- Top & Bottom Jagged Seal -->
+  <rect x="35" y="32" width="130" height="8" fill="#ca8a04"/>
+  <rect x="35" y="200" width="130" height="8" fill="#9a3412"/>
+  <!-- Cheese Splash -->
+  <path d="M 60 70 Q 100 50 140 70 Q 160 100 130 115 Q 100 125 70 115 Q 40 95 60 70 Z" fill="#facc15" stroke="#ffffff" stroke-width="2"/>
+  <text x="100" y="88" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="14" fill="#b45309">뿌려먹는 짭짤치즈</text>
+  <text x="100" y="108" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="18" fill="#78350f">라면스낵</text>
+  <!-- Crispy Ramen noodle block graphic -->
+  <g transform="translate(100, 155)">
+    <rect x="-35" y="-22" width="70" height="44" rx="8" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/>
+    <!-- Noodle curls -->
+    <path d="M -25 -10 Q -15 -18 -5 -10 Q 5 -18 15 -10 Q 25 -18 30 -10" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+    <path d="M -30 2 Q -20 -6 -10 2 Q 0 -6 10 2 Q 20 -6 25 2" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+    <path d="M -25 14 Q -15 6 -5 14 Q 5 6 15 14 Q 25 6 30 14" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+  </g>
+  <!-- Warning sodium badge on package -->
+  <rect x="50" y="185" width="100" height="15" rx="7.5" fill="#ef4444"/>
+  <text x="100" y="196" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="9" fill="#ffffff">스프함유 짭짤주의 55g</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="cupClear" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#e0f2fe" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.7"/>
+    </linearGradient>
+    <filter id="fruitShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <!-- Dome Lid -->
+  <path d="M 40 70 C 40 30 160 30 160 70 Z" fill="#e0f2fe" opacity="0.6" stroke="#93c5fd" stroke-width="2" filter="url(#fruitShadow)"/>
+  <ellipse cx="100" cy="70" rx="64" ry="10" fill="#bfdbfe"/>
+  <!-- Clear Cup Body -->
+  <path d="M 42 70 L 56 195 Q 100 208 144 195 L 158 70 Z" fill="url(#cupClear)" stroke="#93c5fd" stroke-width="2" filter="url(#fruitShadow)"/>
+  <!-- Tomatoes inside the cup -->
+  <!-- Tomato 1 -->
+  <g transform="translate(80, 110)">
+    <circle cx="0" cy="0" r="22" fill="#ef4444" stroke="#b91c1c" stroke-width="1.5"/>
+    <circle cx="-6" cy="-6" r="4" fill="#fca5a5"/>
+    <!-- Calyx green star -->
+    <path d="M 0 -22 L 3 -16 L 8 -21 L 5 -15 L 10 -15 L 4 -12 L 0 -22" fill="#15803d"/>
+  </g>
+  <!-- Tomato 2 (Yellow/Orange) -->
+  <g transform="translate(125, 115)">
+    <circle cx="0" cy="0" r="20" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+    <circle cx="-5" cy="-5" r="3.5" fill="#fef08a"/>
+    <path d="M 0 -20 L 3 -14 L 8 -19 L 5 -13 L 9 -13 L 4 -10 L 0 -20" fill="#15803d"/>
+  </g>
+  <!-- Tomato 3 -->
+  <g transform="translate(100, 155)">
+    <circle cx="0" cy="0" r="24" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/>
+    <circle cx="-7" cy="-7" r="5" fill="#fca5a5"/>
+    <path d="M 0 -24 L 4 -17 L 10 -22 L 6 -16 L 11 -16 L 5 -13 L 0 -24" fill="#16a34a"/>
+  </g>
+  <!-- Sticker Label on Cup -->
+  <rect x="52" y="125" width="96" height="28" rx="14" fill="#ffffff" opacity="0.95" stroke="#16a34a" stroke-width="2"/>
+  <text x="100" y="144" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="13" fill="#15803d">싱싱 방울토마토</text>
+  <!-- Badge -->
+  <rect x="68" y="172" width="64" height="16" rx="8" fill="#16a34a"/>
+  <text x="100" y="184" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="9" fill="#ffffff">비타민 100% 120g</text>
+</svg>

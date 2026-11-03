@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="bannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#16a34a"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <pattern id="tilePattern" width="60" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 0 30 L 60 30 M 30 0 L 30 30" stroke="#b0bec5" stroke-width="1" opacity="0.35"/>
+    </pattern>
+  </defs>
+  <!-- Wall -->
+  <rect x="0" y="0" width="1200" height="650" fill="url(#wallGrad)"/>
+  <!-- Decorative top supermarket banner -->
+  <rect x="0" y="0" width="1200" height="80" fill="url(#bannerGrad)"/>
+  <circle cx="200" cy="40" r="28" fill="#ffffff" opacity="0.2"/>
+  <circle cx="1000" cy="40" r="28" fill="#ffffff" opacity="0.2"/>
+  <!-- Floor -->
+  <rect x="0" y="650" width="1200" height="150" fill="url(#floorGrad)"/>
+  <rect x="0" y="650" width="1200" height="150" fill="url(#tilePattern)"/>
+  <!-- Soft store spotlights -->
+  <circle cx="300" cy="0" r="250" fill="#ffffff" opacity="0.12"/>
+  <circle cx="600" cy="0" r="250" fill="#ffffff" opacity="0.12"/>
+  <circle cx="900" cy="0" r="250" fill="#ffffff" opacity="0.12"/>
+</svg>

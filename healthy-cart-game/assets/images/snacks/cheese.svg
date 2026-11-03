@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="pouchCheese" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <filter id="cheeseShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <!-- Vacuum Pouch Plastic Outer -->
+  <rect x="52" y="30" width="96" height="180" rx="14" fill="#ffffff" stroke="#93c5fd" stroke-width="3" filter="url(#cheeseShadow)"/>
+  <rect x="52" y="30" width="96" height="35" fill="url(#pouchCheese)"/>
+  <text x="100" y="52" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="12" fill="#ffffff">스트링 치즈</text>
+  <!-- Cheese Stick Inside -->
+  <g transform="translate(100, 130)">
+    <rect x="-24" y="-55" width="48" height="110" rx="12" fill="#fef9c3" stroke="#fde047" stroke-width="2"/>
+    <!-- Peeling strings at top -->
+    <path d="M -18 -55 C -24 -75 -15 -85 -10 -90" fill="none" stroke="#fef08a" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 0 -55 C 5 -75 2 -85 10 -92" fill="none" stroke="#fef08a" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 16 -55 C 24 -72 20 -82 18 -88" fill="none" stroke="#fef08a" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <!-- Badge -->
+  <rect x="62" y="175" width="76" height="20" rx="10" fill="#1d4ed8"/>
+  <text x="100" y="189" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="10" fill="#ffffff">자연치즈 100%</text>
+</svg>

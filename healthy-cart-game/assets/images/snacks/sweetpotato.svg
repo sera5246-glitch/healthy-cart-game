@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="potatoSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#831843"/>
+      <stop offset="60%" stop-color="#9d174d"/>
+      <stop offset="100%" stop-color="#701a75"/>
+    </linearGradient>
+    <linearGradient id="potatoInside" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="40%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <filter id="potatoShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Foil wrapping tray -->
+  <polygon points="30,80 170,80 155,200 45,200" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#potatoShadow)"/>
+  <!-- Top Badge -->
+  <rect x="58" y="45" width="84" height="24" rx="12" fill="#be185d"/>
+  <text x="100" y="61" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="11" fill="#ffffff">식이섬유 왕</text>
+  <!-- Sweet Potato Body -->
+  <g transform="translate(100, 135) rotate(-15)">
+    <!-- Bottom intact portion -->
+    <ellipse cx="0" cy="10" rx="36" ry="50" fill="url(#potatoSkin)"/>
+    <!-- Steam waves -->
+    <path d="M -15 -60 Q -20 -75 -15 -90" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 0 -55 Q 5 -70 0 -85" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 15 -60 Q 10 -75 15 -90" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <!-- Broken opened top with golden yellow meat -->
+    <ellipse cx="0" cy="-20" rx="28" ry="22" fill="url(#potatoInside)" stroke="#ca8a04" stroke-width="2"/>
+    <!-- Honey glisten drop -->
+    <circle cx="2" cy="-20" r="5" fill="#fef08a"/>
+  </g>
+  <!-- Label -->
+  <rect x="50" y="172" width="100" height="22" rx="11" fill="#ffffff" stroke="#9d174d" stroke-width="1.5"/>
+  <text x="100" y="187" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="12" fill="#831843">달콤 꿀 군고구마</text>
+</svg>

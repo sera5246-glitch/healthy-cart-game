@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="cupGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fdf2f8"/>
+      <stop offset="50%" stop-color="#fce7f3"/>
+      <stop offset="100%" stop-color="#fbcfe8"/>
+    </linearGradient>
+    <linearGradient id="lidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#be123c"/>
+    </linearGradient>
+    <filter id="cupShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <!-- Cup Lid Foil -->
+  <ellipse cx="100" cy="50" rx="72" ry="16" fill="url(#lidGrad)" filter="url(#cupShadow)"/>
+  <ellipse cx="100" cy="48" rx="66" ry="12" fill="#fda4af"/>
+  <!-- Foil Tab -->
+  <path d="M 166 48 L 180 44 L 176 54 Z" fill="#e11d48"/>
+  <text x="100" y="52" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="12" fill="#881337">FRESH GREEK</text>
+  <!-- Cup Body -->
+  <path d="M 32 50 L 52 190 Q 100 205 148 190 L 168 50 Z" fill="url(#cupGrad)" filter="url(#cupShadow)"/>
+  <!-- Pink Label band -->
+  <path d="M 38 90 L 46 150 Q 100 162 154 150 L 162 90 Q 100 80 38 90 Z" fill="#ec4899"/>
+  <!-- Strawberry Illustration -->
+  <g transform="translate(100, 130) scale(1.1)">
+    <!-- Strawberry body -->
+    <path d="M 0 -12 C 16 -12 20 8 0 24 C -20 8 -16 -12 0 -12 Z" fill="#e11d48"/>
+    <!-- Leaves -->
+    <path d="M 0 -12 C -6 -18 -14 -16 -12 -10 C -6 -10 0 -12 0 -12 Z" fill="#22c55e"/>
+    <path d="M 0 -12 C 6 -18 14 -16 12 -10 C 6 -10 0 -12 0 -12 Z" fill="#22c55e"/>
+    <path d="M 0 -12 C 0 -20 2 -20 0 -12 Z" fill="#15803d"/>
+    <!-- Seeds -->
+    <circle cx="-6" cy="-2" r="1" fill="#fef08a"/>
+    <circle cx="6" cy="-2" r="1" fill="#fef08a"/>
+    <circle cx="0" cy="4" r="1" fill="#fef08a"/>
+    <circle cx="-5" cy="11" r="1" fill="#fef08a"/>
+    <circle cx="5" cy="11" r="1" fill="#fef08a"/>
+  </g>
+  <!-- Text on band -->
+  <text x="100" y="112" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="16" fill="#ffffff">딸기 그릭요거트</text>
+  <!-- Healthy Badge -->
+  <rect x="65" y="165" width="70" height="16" rx="8" fill="#10b981"/>
+  <text x="100" y="177" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="9" fill="#ffffff">고단백 8g · 85g</text>
+</svg>

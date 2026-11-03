@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="jarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="40%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <filter id="jarShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <!-- Foil Lid -->
+  <ellipse cx="100" cy="50" rx="42" ry="12" fill="#16a34a" filter="url(#jarShadow)"/>
+  <ellipse cx="100" cy="48" rx="38" ry="9" fill="#22c55e"/>
+  <!-- Straw -->
+  <path d="M 110 46 L 125 15 L 140 12" fill="none" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/>
+  <!-- Classic Korean Jar Bottle Shape -->
+  <path d="M 64 50 Q 30 110 50 175 Q 100 205 150 175 Q 170 110 136 50 Z" fill="url(#jarGrad)" filter="url(#jarShadow)"/>
+  <!-- Green Print Text -->
+  <ellipse cx="100" cy="115" rx="36" ry="18" fill="#ffffff" opacity="0.9"/>
+  <text x="100" y="112" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="14" fill="#15803d">바나나맛</text>
+  <text x="100" y="127" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="14" fill="#15803d">우유</text>
+  <!-- Calorie/Sugar Warning hint -->
+  <rect x="65" y="150" width="70" height="16" rx="8" fill="#ca8a04"/>
+  <text x="100" y="162" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="800" font-size="9" fill="#ffffff">원유 85% 240ml</text>
+</svg>

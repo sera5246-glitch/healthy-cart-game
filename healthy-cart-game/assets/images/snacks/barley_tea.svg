@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="teaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45309" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#d97706" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#92400e" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="bottleShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <!-- Bottle Cap -->
+  <rect x="88" y="22" width="24" height="18" rx="4" fill="#15803d"/>
+  <!-- Bottle Neck -->
+  <path d="M 88 40 L 112 40 L 132 75 L 68 75 Z" fill="url(#teaGrad)"/>
+  <!-- Bottle Body -->
+  <rect x="65" y="75" width="70" height="125" rx="8" fill="url(#teaGrad)" stroke="#fed7aa" stroke-width="1.5" filter="url(#bottleShadow)"/>
+  <!-- Tea Label Wrap -->
+  <rect x="65" y="98" width="70" height="60" fill="#ffffff" opacity="0.95"/>
+  <text x="100" y="118" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="13" fill="#78350f">유기농</text>
+  <text x="100" y="136" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="16" fill="#15803d">보리차</text>
+  <!-- Zero Sugar Green Badge -->
+  <rect x="70" y="172" width="60" height="16" rx="8" fill="#16a34a"/>
+  <text x="100" y="184" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="8.5" fill="#ffffff">0 kcal · 무당</text>
+</svg>

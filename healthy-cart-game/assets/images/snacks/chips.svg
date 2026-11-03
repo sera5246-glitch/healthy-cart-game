@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="bagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <filter id="chipShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Bag Body -->
+  <path d="M 35 30 L 165 30 L 175 210 L 25 210 Z" fill="url(#bagGrad)" filter="url(#chipShadow)"/>
+  <!-- Bag Top & Bottom Serrations -->
+  <path d="M 35 30 L 45 22 L 55 30 L 65 22 L 75 30 L 85 22 L 95 30 L 105 22 L 115 30 L 125 22 L 135 30 L 145 22 L 155 30 L 165 22 L 165 34 L 35 34 Z" fill="#b45309"/>
+  <path d="M 25 210 L 35 218 L 45 210 L 55 218 L 65 210 L 75 218 L 85 210 L 95 218 L 105 210 L 115 218 L 125 210 L 135 218 L 145 210 L 155 218 L 165 210 L 175 218 L 175 206 L 25 206 Z" fill="#9a3412"/>
+  <!-- Bag Shine & Wrinkle -->
+  <path d="M 50 40 Q 65 120 40 195" fill="none" stroke="#fed7aa" stroke-width="8" opacity="0.4" stroke-linecap="round"/>
+  <!-- Brand Oval -->
+  <ellipse cx="100" cy="85" rx="55" ry="32" fill="#ef4444" stroke="#ffffff" stroke-width="3"/>
+  <text x="100" y="80" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="20" fill="#fef08a">바삭바삭</text>
+  <text x="100" y="103" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="22" fill="#ffffff">감자칩</text>
+  <!-- Potato Chip Illustration -->
+  <ellipse cx="100" cy="155" rx="42" ry="26" fill="#fde047" stroke="#eab308" stroke-width="3" transform="rotate(-15 100 155)"/>
+  <path d="M 80 145 Q 100 135 120 150" fill="none" stroke="#ca8a04" stroke-width="2"/>
+  <ellipse cx="115" cy="170" rx="30" ry="18" fill="#facc15" stroke="#ca8a04" stroke-width="2" transform="rotate(10 115 170)"/>
+  <!-- Salt sprinkle flakes -->
+  <circle cx="85" cy="155" r="1.5" fill="#ffffff"/>
+  <circle cx="105" cy="160" r="1.5" fill="#ffffff"/>
+  <circle cx="120" cy="150" r="1.5" fill="#ffffff"/>
+  <!-- Small Badge on Bag -->
+  <rect x="40" y="185" width="120" height="18" rx="9" fill="#1e293b" opacity="0.8"/>
+  <text x="100" y="198" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="10" fill="#ffffff">짭짤 고소 오리지널 50g</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 60" width="1000" height="60" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="woodTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fcd34d"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="woodFront" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <filter id="shelfShadow" x="0" y="0" width="100%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="4" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Shelf Top Surface -->
+  <polygon points="0,15 1000,15 1000,28 0,28" fill="url(#woodTop)"/>
+  <!-- Shelf Front Edge -->
+  <rect x="0" y="28" width="1000" height="24" fill="url(#woodFront)" filter="url(#shelfShadow)"/>
+  <!-- Highlight line -->
+  <line x1="0" y1="29" x2="1000" y2="29" stroke="#fbbf24" stroke-width="2"/>
+  <!-- Price tag holder strip (white transparent acrylic strip) -->
+  <rect x="0" y="32" width="1000" height="16" fill="#ffffff" opacity="0.15"/>
+</svg>

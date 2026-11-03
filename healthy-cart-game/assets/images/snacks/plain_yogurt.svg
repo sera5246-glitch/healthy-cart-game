@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="plainCup" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <filter id="plainShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <!-- Cup Lid -->
+  <ellipse cx="100" cy="50" rx="72" ry="16" fill="#0284c7" filter="url(#plainShadow)"/>
+  <ellipse cx="100" cy="48" rx="66" ry="12" fill="#38bdf8"/>
+  <text x="100" y="52" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="12" fill="#0c4a6e">SUGAR FREE 0g</text>
+  <!-- Cup Body -->
+  <path d="M 32 50 L 52 190 Q 100 205 148 190 L 168 50 Z" fill="url(#plainCup)" stroke="#cbd5e1" stroke-width="2" filter="url(#plainShadow)"/>
+  <!-- Blue Banner band -->
+  <path d="M 38 90 L 46 150 Q 100 162 154 150 L 162 90 Q 100 80 38 90 Z" fill="#0284c7"/>
+  <!-- Milk Drop graphic -->
+  <circle cx="100" cy="120" r="16" fill="#ffffff"/>
+  <path d="M 100 110 C 105 118 108 122 108 125 C 108 130 104 133 100 133 C 96 133 92 130 92 125 C 92 122 95 118 100 110 Z" fill="#0284c7"/>
+  <text x="100" y="105" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="14" fill="#ffffff">플레인 요거트</text>
+  <rect x="62" y="165" width="76" height="18" rx="9" fill="#10b981"/>
+  <text x="100" y="177" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="9" fill="#ffffff">무설탕·생유산균</text>
+</svg>

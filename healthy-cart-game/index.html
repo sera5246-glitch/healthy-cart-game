@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>싱싱 건강마트 탐험대 - 실감형 영양표시 읽기 & 간식 월드컵</title>
+  
+  <!-- Pretendard Web Font for high legibility -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  
+  <!-- Modular CSS Directory -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/ui/cart.svg">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Supermarket Store Header -->
+    <header class="mart-header" role="banner">
+      <div class="header-brand">
+        <img class="brand-icon bounce-soft" src="assets/images/ui/cart.svg" alt="건강마트 카트 로고">
+        <div>
+          <h1 class="brand-title">싱싱 건강마트</h1>
+          <div class="brand-subtitle">실감형 마트 장보기 게임 & 영양표시 읽기</div>
+        </div>
+      </div>
+
+      <!-- Navigation Mode Switcher -->
+      <nav class="mode-nav-tabs" aria-label="게임 모드 전환">
+        <button id="tab-adventure-mode" class="mode-tab-btn active" title="마트에 직접 입장해 진열대 앞에서 고르는 게임">
+          🏪 실감 마트 입장 게임
+        </button>
+        <button id="tab-mart-mode" class="mode-tab-btn" title="24종 전체 간식 한눈에 보기">
+          📋 전체 진열대 보기
+        </button>
+        <button id="tab-worldcup-mode" class="mode-tab-btn worldcup-tab" title="건강 간식 이상형 월드컵">
+          🏆 건강 간식 월드컵
+        </button>
+      </nav>
+
+      <!-- Control buttons -->
+      <div class="header-actions">
+        <button id="btn-toggle-sound" class="btn-icon active" title="효과음 켜기/끄기" aria-label="효과음 켜짐">
+          🔊
+        </button>
+        <button id="btn-toggle-tts" class="btn-icon active" title="영양 닥터 다람이 음성 안내" aria-label="음성 안내 켜짐">
+          🗣️
+        </button>
+        <button id="btn-open-help" class="btn-icon" title="영양표시 읽는 법 도감" aria-label="영양표시 도감 열기">
+          📖
+        </button>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         MODE 0 (NEW MAIN): IMMERSIVE MART ADVENTURE GAME (실감 마트 입장 & 진열대 탐험)
+         ==================================================================== -->
+    <section id="adventure-game-view" class="adventure-section" aria-label="실감 마트 입장 게임">
+      
+      <!-- STEP 1: MART ENTRANCE GATE (마트 입구 자동문 & 시나리오 선택) -->
+      <div id="mart-entrance-screen" class="mart-entrance-screen">
+        <div class="entrance-building">
+          <div class="entrance-roof-sign">
+            <span class="roof-lights">✨</span>
+            <h2>WELCOME! 싱싱 건강마트 입구</h2>
+            <span class="roof-lights">✨</span>
+          </div>
+
+          <!-- Sliding Automatic Glass Doors -->
+          <div id="entrance-doors" class="entrance-doors-wrap">
+            <div class="auto-door door-left">
+              <div class="door-poster">
+                <span>🚦</span>
+                <strong>영양 신호등 확인!</strong>
+                <small>뒷면 성분표를 읽고 골라요</small>
+              </div>
+            </div>
+            <div class="auto-door door-right">
+              <div class="door-poster">
+                <span>🛒</span>
+                <strong>오늘의 건강 장보기</strong>
+                <small>어떤 간식을 선택할까요?</small>
+              </div>
+            </div>
+
+            <!-- Setup Panel Overlaid on Entrance -->
+            <div class="entrance-setup-card">
+              <h3 class="setup-title">👋 마트에 입장할 학생과 오늘의 상황을 골라주세요!</h3>
+              
+              <!-- Character Picker -->
+              <div class="character-picker">
+                <button type="button" class="char-select-btn active" data-char="boy">
+                  <img src="assets/images/ui/student-boy.svg" alt="남학생 민수">
+                  <strong>씩씩한 민수</strong>
+                  <span>초등학생 탐험가</span>
+                </button>
+                <button type="button" class="char-select-btn" data-char="girl">
+                  <img src="assets/images/ui/student-girl.svg" alt="여학생 지아">
+                  <strong>똑똑한 지아</strong>
+                  <span>영양 박사 꿈나무</span>
+                </button>
+              </div>
+
+              <!-- Scenario Picker -->
+              <div class="scenario-picker-title">🎯 오늘 마트에 온 이유는 무엇인가요?</div>
+              <div class="scenario-list" id="scenario-list">
+                <button type="button" class="scenario-btn active" data-scenario="afterschool">
+                  <span class="sc-icon">🎒</span>
+                  <div class="sc-text">
+                    <strong>방과 후 출출한 간식 사기 (당류 주의!)</strong>
+                    <small>수업이 끝나고 배가 고파요! '당류 빨간불' 간식을 피해 간식 3개 이상을 골라보세요.</small>
+                  </div>
+                </button>
+                <button type="button" class="scenario-btn" data-scenario="picnic">
+                  <span class="sc-icon">🎡</span>
+                  <div class="sc-text">
+                    <strong>신나는 소풍 간식 고르기 (나트륨 주의!)</strong>
+                    <small>소풍 가서 먹을 간식이에요! 짜지 않은 '나트륨 초록불' 간식 3개 이상을 골라보세요.</small>
+                  </div>
+                </button>
+                <button type="button" class="scenario-btn" data-scenario="sports">
+                  <span class="sc-icon">🏃</span>
+                  <div class="sc-text">
+                    <strong>체육 시간 후 에너지 충전 (올 그린 도전!)</strong>
+                    <small>운동 후 갈증과 에너지를 채워요! 빨간불이 하나도 없는 건강 간식 3개 이상을 골라보세요.</small>
+                  </div>
+                </button>
+              </div>
+
+              <button type="button" id="btn-enter-mart" class="btn-enter-mart">
+                🚪 위이잉~ 자동문 열고 마트 입장하기!
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: INSIDE THE MART - AISLE & SHELF EXPLORATION (마트 내부 진열대 앞) -->
+      <div id="mart-aisle-screen" class="mart-aisle-screen" style="display: none;">
+        
+        <!-- Top HUD: Current Scenario, Score, Aisle Map Navigation -->
+        <div class="aisle-top-hud">
+          <div class="hud-scenario-box">
+            <span id="hud-scenario-badge" class="hud-badge">🎒 방과 후 간식 미션</span>
+            <p id="hud-scenario-goal" class="hud-goal-text">당류 빨간불 간식을 피해서 3개 이상 카트에 담으세요!</p>
+          </div>
+
+          <div class="hud-stats-group">
+            <div class="hud-stat-pill" title="영양성분표를 확인한 횟수">
+              <span>👀 성분표 확인:</span>
+              <strong id="hud-inspected-count">0회</strong>
+            </div>
+            <div class="hud-stat-pill" title="빨간불 간식을 확인하고 진열대에 다시 내려놓은 횟수">
+              <span>🛡️ 유혹 참기 성공:</span>
+              <strong id="hud-resisted-count">0회</strong>
+            </div>
+            <div class="hud-stat-pill score-pill">
+              <span>⭐ 영양 탐구 점수:</span>
+              <strong id="hud-adventure-score">0점</strong>
+            </div>
+          </div>
+
+          <button type="button" id="btn-back-entrance" class="btn-back-entrance" title="입구에서 시나리오 다시 고르기">
+            🚪 마트 입구로
+          </button>
+        </div>
+
+        <!-- Aisle Mini-Map (코너 이동 네비게이션 바) -->
+        <div class="aisle-minimap" id="aisle-minimap" role="navigation" aria-label="마트 코너 이동">
+          <!-- Populated dynamically via JS: 1코너 ~ 6코너 + 계산대 -->
+        </div>
+
+        <!-- Main Supermarket Aisle Stage -->
+        <div class="aisle-stage-grid">
+          
+          <!-- Left/Center: The Physical Shelf Display in Front of the Student -->
+          <div id="aisle-shelf-unit" class="aisle-shelf-unit theme-snack">
+            <!-- Hanging Ceiling Aisle Signboard -->
+            <div class="aisle-ceiling-sign">
+              <button type="button" id="btn-prev-aisle" class="aisle-nav-arrow" title="이전 코너로 걸어가기 (←)">
+                ◀ 이전 코너
+              </button>
+              <div class="ceiling-sign-board">
+                <span id="aisle-sign-number" class="sign-corner-num">1번 코너</span>
+                <h2 id="aisle-sign-title" class="sign-corner-title">🍪 바삭바삭 과자·스낵 진열대</h2>
+                <p id="aisle-sign-sub" class="sign-corner-sub">진열대에서 궁금한 간식을 클릭해 손으로 집어보세요!</p>
+              </div>
+              <button type="button" id="btn-next-aisle" class="aisle-nav-arrow" title="다음 코너로 걸어가기 (→)">
+                다음 코너 ▶
+              </button>
+            </div>
+
+            <!-- 2-Tier Realistic Store Shelf -->
+            <div class="store-shelf-cabinet">
+              <!-- Upper Shelf Tier -->
+              <div class="shelf-row-stage" id="aisle-shelf-top">
+                <!-- Snacks on top shelf -->
+              </div>
+              <div class="shelf-plank">
+                <div class="shelf-price-rail">🏪 상품을 클릭하면 손에 들고 영양성분표를 살펴볼 수 있어요!</div>
+              </div>
+
+              <!-- Lower Shelf Tier -->
+              <div class="shelf-row-stage" id="aisle-shelf-bottom">
+                <!-- Snacks on bottom shelf -->
+              </div>
+              <div class="shelf-plank">
+                <div class="shelf-price-rail">💡 앞면 포장지에 속지 말고 뒷면 신호등을 꼭 확인해요!</div>
+              </div>
+            </div>
+
+            <!-- Floor & Walking Student Character Pushing Cart -->
+            <div class="aisle-floor-stage">
+              <div id="student-avatar-actor" class="student-avatar-actor">
+                <!-- Student Thought Bubble -->
+                <div class="student-speech-bubble" id="student-speech-bubble">
+                  "우와~ 맛있어 보이는 간식이 많네! 어느 걸 집어서 확인해볼까?"
+                </div>
+                <div class="avatar-cart-combo">
+                  <img id="student-avatar-img" class="student-char-img" src="assets/images/ui/student-boy.svg" alt="학생 캐릭터">
+                  <div class="pushed-cart-wrap">
+                    <img class="pushed-cart-img" src="assets/images/ui/cart.svg" alt="쇼핑 카트">
+                    <div id="pushed-cart-items-preview" class="pushed-cart-items-preview">
+                      <!-- Mini icons of snacks currently inside the cart -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Go-to-Checkout Button on the Floor -->
+              <button type="button" id="btn-go-checkout-counter" class="btn-checkout-lane">
+                <span>💳</span> 다 골랐어요! 계산대로 이동하기 ▶
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Side: Student's Current Cart & Decision Log -->
+          <aside class="adventure-side-panel">
+            <div class="side-panel-header">
+              <h3>🛒 내가 고른 장바구니 (<span id="adv-cart-count">0</span>/8)</h3>
+            </div>
+            
+            <div id="adv-cart-list" class="adv-cart-list">
+              <!-- Populated by JS -->
+            </div>
+
+            <!-- Real-time Nutrient Gauges -->
+            <div class="adv-cart-gauges">
+              <div class="gauge-item">
+                <div class="gauge-label">
+                  <span>🍬 당류 합계</span>
+                  <strong id="adv-sugar-text">0g (각설탕 0개)</strong>
+                </div>
+                <div class="gauge-bar-bg">
+                  <div id="adv-sugar-bar" class="gauge-bar-fill green" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <div class="gauge-item">
+                <div class="gauge-label">
+                  <span>🧂 나트륨 합계</span>
+                  <strong id="adv-sodium-text">0mg</strong>
+                </div>
+                <div class="gauge-bar-bg">
+                  <div id="adv-sodium-bar" class="gauge-bar-fill green" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Choice Log (내가 진열대 앞에서 한 행동 기록) -->
+            <div class="choice-history-box">
+              <h4>📝 진열대 앞 나의 선택 기록</h4>
+              <ul id="adv-choice-log" class="adv-choice-log">
+                <li class="log-empty">아직 진열대에서 집어 든 간식이 없어요.</li>
+              </ul>
+            </div>
+
+            <button type="button" id="btn-side-checkout" class="cart-action-btn">
+              💳 계산대에서 바코드 찍기
+            </button>
+          </aside>
+
+        </div>
+      </div>
+
+      <!-- STEP 3: HAND-HELD SNACK DECISION MODAL ("진열대 앞에서 간식을 손에 들었어요!") -->
+      <div id="hand-pickup-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="pickup-title">
+        <div class="pickup-modal-box">
+          <div class="pickup-header">
+            <span id="pickup-corner-badge" class="pickup-badge">✋ 진열대 앞에서 간식을 손에 들었어요!</span>
+            <button type="button" id="btn-close-pickup" class="btn-icon" aria-label="내려놓기">✕</button>
+          </div>
+
+          <div class="pickup-body">
+            <!-- Left: 3D Interactive Snack in Student's Hands -->
+            <div class="pickup-visual-stage">
+              <div class="student-reaction-bar">
+                <img id="pickup-student-face" src="assets/images/ui/student-boy.svg" alt="학생">
+                <div id="pickup-student-thought" class="pickup-thought-text">
+                  "겉포장지는 정말 맛있어 보이는데... 바로 담을까? 아니면 뒷면 영양성분표를 먼저 읽어볼까?"
+                </div>
+              </div>
+
+              <!-- 3D Flippable Snack in Hand -->
+              <div id="pickup-card-3d" class="card-3d-wrap pickup-3d-size">
+                <!-- Populated dynamically via JS -->
+              </div>
+
+              <div class="pickup-flip-Callout">
+                <button type="button" id="btn-pickup-flip" class="btn-pickup-flip pulse-green">
+                  🔄 간식 뒤집어서 뒷면 [영양성분표] 확인하기!
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: What will the student choose to do? -->
+            <div class="pickup-decision-panel">
+              <h3 id="pickup-title" class="pickup-snack-title">간식 이름</h3>
+              <p id="pickup-snack-desc" class="pickup-snack-tagline">간식 설명</p>
+
+              <!-- Dynamic Nutrition Analysis Box (Revealed when flipped!) -->
+              <div id="pickup-nutrition-secret" class="pickup-secret-box locked">
+                <div class="secret-locked-overlay" id="secret-locked-msg">
+                  <span style="font-size: 2rem;">🔒</span>
+                  <strong>아직 뒷면 영양성분표를 확인하지 않았어요!</strong>
+                  <p>왼쪽의 <b>[🔄 간식 뒤집어서 영양성분표 확인하기]</b> 버튼을 눌러 당류·나트륨 신호등을 먼저 읽어보세요!</p>
+                </div>
+                <div id="secret-unlocked-content" style="display: none;">
+                  <!-- Populated when student flips the snack -->
+                </div>
+              </div>
+
+              <!-- Student's Final Choice Buttons in Front of the Shelf -->
+              <div class="pickup-choice-actions">
+                <div class="choice-prompt-label">🤔 진열대 앞에서 나의 선택은?</div>
+                <button type="button" id="btn-decision-put-in-cart" class="btn-decision decision-buy">
+                  <span class="dec-icon">🛒</span>
+                  <div class="dec-text">
+                    <strong>이 간식을 내 카트에 담기!</strong>
+                    <small id="dec-buy-sub">맛있어 보이니까 장바구니에 넣을래요</small>
+                  </div>
+                </button>
+
+                <button type="button" id="btn-decision-put-back" class="btn-decision decision-return">
+                  <span class="dec-icon">✋</span>
+                  <div class="dec-text">
+                    <strong>다시 진열대에 내려놓기 (안 사요!)</strong>
+                    <small id="dec-return-sub">영양성분을 확인해보니 다른 간식을 찾아볼래요</small>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4: CHECKOUT COUNTER & BARCODE SCANNER MODAL (계산대 바코드 스캔) -->
+      <div id="checkout-scanner-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="scanner-title">
+        <div class="scanner-modal-box">
+          <div class="modal-header">
+            <div id="scanner-title" class="modal-title">
+              <span>💳</span>
+              <span>싱싱 건강마트 바코드 계산대</span>
+            </div>
+            <button type="button" id="btn-close-scanner" class="btn-icon" aria-label="계산대 닫기">✕</button>
+          </div>
+          <div id="scanner-modal-body" class="scanner-body">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         MODE 1: ALL 24 SNACKS OVERVIEW GRID (전체 진열대 한눈에 보기)
+         ==================================================================== -->
+    <div id="mart-game-view" style="display: none;">
+      <!-- Mission & Mascot Interactive Banner -->
+      <section class="mission-section" aria-label="현재 영양 미션">
+        <div class="mission-card">
+          <img id="mission-mascot" class="mission-mascot" src="assets/images/ui/mascot.svg" alt="영양 닥터 다람이">
+          <div class="mission-content">
+            <div id="mission-level-badge" class="mission-level-badge">1단계: 탐험 준비</div>
+            <h2 id="mission-title" class="mission-title">신호등 탐험가</h2>
+            <p id="mission-desc" class="mission-desc">
+              간식 카드를 클릭하거나 [🔄 성분표 보기]를 눌러 뒷면 영양성분표를 확인하세요.
+            </p>
+          </div>
+          <div class="mission-stats">
+            <span id="mission-progress-label" class="mission-progress-label">0 / 3 완료</span>
+            <div class="mission-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+              <div id="mission-progress-fill" class="mission-progress-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category Filter Bar -->
+      <nav class="category-filter-bar" id="category-filters" aria-label="간식 분류 필터">
+        <!-- Category chips dynamically populated via JS -->
+      </nav>
+
+      <!-- Main Game Viewport: Mart Shelves + Healthy Cart -->
+      <main class="main-viewport" role="main">
+        <!-- Left: Supermarket Shelves Section -->
+        <section class="shelves-section" aria-label="마트 진열대">
+          <div class="shelf-tier">
+            <div class="shelf-tier-title">
+              <h3>
+                <span>🏪</span> 오늘의 24종 간식 진열대
+              </h3>
+              <span style="font-size: 0.82rem; color: #64748b; font-weight: 700;">
+                💡 카드를 뒤집거나 돋보기로 성분표를 읽어보세요!
+              </span>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="shelf-cards-grid" id="shelves-grid">
+              <!-- 3D Flip Snack Cards rendered dynamically via JS -->
+            </div>
+
+            <!-- Wood Edge Shelf Base -->
+            <div class="shelf-wood-base" aria-hidden="true"></div>
+          </div>
+        </section>
+
+        <!-- Right: Healthy Shopping Cart Dock -->
+        <aside class="cart-dock" id="cart-dock" aria-label="내 장바구니">
+          <div class="cart-dock-header">
+            <div class="cart-dock-title">
+              <img src="assets/images/ui/cart.svg" alt="카트" style="width: 28px; height: 28px;">
+              <span>건강 장바구니</span>
+            </div>
+            <span id="cart-count-badge" class="cart-count-badge">0개</span>
+          </div>
+
+          <!-- Items inside Cart -->
+          <div class="cart-items-container" id="cart-items-list">
+            <!-- Cart item cards inserted here -->
+          </div>
+
+          <!-- Empty placeholder -->
+          <div class="cart-empty-placeholder" id="cart-empty-state">
+            <img src="assets/images/ui/cart.svg" alt="" aria-hidden="true">
+            <div>
+              <strong>장바구니가 비어있어요!</strong>
+              <p style="font-size: 0.8rem; margin-top: 4px;">간식을 드래그하거나 [카트에 담기]를 눌러보세요.</p>
+            </div>
+          </div>
+
+          <!-- Live Cart Nutrition Meter Footer -->
+          <div class="cart-nutrition-summary">
+            <div class="cart-meter-row">
+              <span>총 열량:</span>
+              <span id="cart-cal-total" style="color: #0f172a;">0 kcal</span>
+            </div>
+            <div class="cart-meter-row">
+              <span>총 당류:</span>
+              <span id="cart-sugar-meter" style="color: #d97706;">0g (각설탕 0개)</span>
+            </div>
+            <div class="cart-meter-row">
+              <span>총 나트륨:</span>
+              <span id="cart-sodium-meter" style="color: #dc2626;">0mg</span>
+            </div>
+            <div class="cart-meter-row" style="border-top: 1px dashed #cbd5e1; padding-top: 6px;">
+              <span>신호등 요약:</span>
+              <div id="cart-lights-summary" class="cart-traffic-icons">
+                <span class="traffic-badge green"><span class="traffic-dot"></span> 0</span>
+                <span class="traffic-badge red"><span class="traffic-dot"></span> 0</span>
+              </div>
+            </div>
+
+            <button id="btn-checkout" class="cart-action-btn" aria-label="장바구니 영양 성적표 보기">
+              <span>🧾</span> 영양 성적표 확인하기
+            </button>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <!-- ====================================================================
+         MODE 2: SNACK WORLD CUP TOURNAMENT (간식 이상형 월드컵)
+         ==================================================================== -->
+    <section id="worldcup-section" class="worldcup-section" aria-label="건강 간식 이상형 월드컵">
+      <div class="worldcup-header-banner">
+        <div class="worldcup-title-group">
+          <img class="worldcup-trophy-img bounce-soft" src="assets/images/ui/trophy.svg" alt="트로피">
+          <div>
+            <span id="worldcup-round-label" class="worldcup-round-pill">16강 1 / 8 대결</span>
+            <h2 class="worldcup-title">건강 간식 이상형 월드컵 🏆</h2>
+            <p style="font-size: 0.9rem; color: #92400e; font-weight: 700;">
+              두 간식의 영양표시를 꼼꼼히 비교하고, 내 몸에 더 건강한 간식을 선택하세요!
+            </p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button id="btn-restart-worldcup" class="btn-card" style="background: #ffffff; border: 2px solid #ca8a04; color: #b45309; padding: 10px 16px;">
+            🔄 월드컵 다시 시작
+          </button>
+        </div>
+      </div>
+
+      <!-- Mascot Tip Banner -->
+      <div style="background: #f0fdf4; border: 2px solid #86efac; border-radius: var(--radius-md); padding: 12px 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 14px;">
+        <img src="assets/images/ui/mascot.svg" style="width: 44px; height: 44px;" alt="영양 다람이">
+        <div id="worldcup-mascot-tip" style="font-size: 0.92rem; font-weight: 700; color: #064e3b;">
+          💡 당류와 나트륨의 신호등 색깔을 비교해 보세요! 초록불이 많을수록 건강 우등생 간식이랍니다.
+        </div>
+      </div>
+
+      <!-- Match Arena (Card A vs Card B) -->
+      <div id="worldcup-arena" class="worldcup-arena">
+        <!-- Left Competitor Card -->
+        <div id="worldcup-card-left" class="worldcup-card">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Center VS Badge -->
+        <div class="worldcup-vs-badge">
+          <div class="vs-circle">VS</div>
+        </div>
+
+        <!-- Right Competitor Card -->
+        <div id="worldcup-card-right" class="worldcup-card">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Champion Result Screen (Hidden initially) -->
+      <div id="worldcup-champion-screen" class="worldcup-champion-view" style="display: none;">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Magnifier Inspection Modal Station (돋보기 정밀 분석)
+         ==================================================================== -->
+    <div id="inspection-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="inspection-title">
+      <div class="inspection-modal-box">
+        <div class="modal-header">
+          <div id="inspection-title" class="modal-title">
+            <img src="assets/images/ui/magnifier.svg" alt="돋보기" style="width: 32px; height: 32px;">
+            <span>영양성분 돋보기 정밀 분석실</span>
+          </div>
+          <button id="btn-close-inspection" class="btn-icon" aria-label="돋보기 분석실 닫기">✕</button>
+        </div>
+        <div id="inspection-modal-body" class="modal-body">
+          <!-- Populated dynamically via game.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         Nutrition Report Card Modal (영양 성적표)
+         ==================================================================== -->
+    <div id="report-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="report-title">
+      <div class="report-card-box">
+        <button id="btn-close-report" class="btn-icon" style="position: absolute; top: 16px; right: 16px;" aria-label="성적표 닫기">✕</button>
+        <div id="report-modal-body">
+          <!-- Populated dynamically via game.js -->
+        </div>
+        <div style="display: flex; gap: 12px; margin-top: 16px;">
+          <button id="btn-restart-game" class="cart-action-btn" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+            🔄 다시 장보기 & 미션 도전
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         Nutrition Encyclopedia Modal (영양표시 바로 알기 도감)
+         ==================================================================== -->
+    <div id="encyclopedia-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="help-title">
+      <div class="inspection-modal-box" style="max-width: 650px;">
+        <div class="modal-header">
+          <div id="help-title" class="modal-title">
+            <img src="assets/images/ui/traffic-light.svg" alt="신호등" style="width: 24px; height: 38px;">
+            <span>어린이 기호식품 영양신호등이란?</span>
+          </div>
+          <button id="btn-close-help" class="btn-icon" aria-label="도감 닫기">✕</button>
+        </div>
+        <div class="modal-body" style="grid-template-columns: 1fr; gap: 16px;">
+          <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: var(--radius-md); padding: 14px;">
+            <h4 style="color: #15803d; margin-bottom: 6px;">🚦 영양 신호등 3가지 색상의 약속</h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem;">
+              <li style="display: flex; align-items: center; gap: 8px;">
+                <span class="traffic-badge green"><span class="traffic-dot"></span> 녹색(초록)</span>
+                <strong>안심!</strong> 비만과 질병 걱정 없이 안심하고 먹을 수 있는 건강한 수준이에요.
+              </li>
+              <li style="display: flex; align-items: center; gap: 8px;">
+                <span class="traffic-badge yellow"><span class="traffic-dot"></span> 황색(노랑)</span>
+                <strong>적당히!</strong> 하루 기준치를 넘지 않도록 양을 조절해서 먹어야 해요.
+              </li>
+              <li style="display: flex; align-items: center; gap: 8px;">
+                <span class="traffic-badge red"><span class="traffic-dot"></span> 적색(빨강)</span>
+                <strong>주의!</strong> 당류, 나트륨, 포화지방이 너무 많아요. 가끔만 먹도록 해요!
+              </li>
+            </ul>
+          </div>
+
+          <div style="font-size: 0.9rem; line-height: 1.6; color: #334155;">
+            <h4 style="font-size: 1rem; color: #0f172a; margin-bottom: 6px;">🔍 영양표시 읽는 3단계 공식</h4>
+            <p><strong>1. '총 내용량'과 '1회 섭취참고량'을 확인해요:</strong> 과자 1봉지가 2회 분량일 경우, 칼로리와 설탕을 2배로 계산해야 해요!</p>
+            <p style="margin-top: 6px;"><strong>2. 당류와 나트륨의 신호등을 봐요:</strong> 달콤한 탄산음료에는 각설탕 9개 분량이, 짭짤한 라면스낵에는 하루 나트륨의 1/3이 들어있어요.</p>
+            <p style="margin-top: 6px;"><strong>3. 1일 영양성분 기준치 비율(%)을 비교해요:</strong> % 수치가 높을수록 하루에 필요한 영양소 중 많은 양을 차지한다는 뜻이에요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notifications Area -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

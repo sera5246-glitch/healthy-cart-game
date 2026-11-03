@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="pouchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="50%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+    <filter id="jellyShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Pouch Body -->
+  <path d="M 40 38 L 160 38 L 168 195 L 32 195 Z" fill="url(#pouchGrad)" filter="url(#jellyShadow)"/>
+  <!-- Top Zip Seal -->
+  <rect x="40" y="32" width="120" height="10" fill="#7c3aed"/>
+  <circle cx="100" cy="37" r="3" fill="#ffffff" opacity="0.8"/>
+  <!-- Rainbow Ribbon -->
+  <path d="M 32 90 Q 100 115 168 85" stroke="#facc15" stroke-width="6" fill="none"/>
+  <path d="M 32 96 Q 100 121 168 91" stroke="#38bdf8" stroke-width="6" fill="none"/>
+  <!-- Pouch Text -->
+  <rect x="48" y="52" width="104" height="30" rx="8" fill="#ffffff"/>
+  <text x="100" y="73" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="16" fill="#be185d">무지개 젤리곰</text>
+  <!-- Cute Gummy Bears -->
+  <!-- Red Bear -->
+  <g transform="translate(70, 140)">
+    <circle cx="0" cy="-6" r="10" fill="#ef4444"/>
+    <circle cx="-8" cy="-14" r="4" fill="#ef4444"/>
+    <circle cx="8" cy="-14" r="4" fill="#ef4444"/>
+    <ellipse cx="0" cy="8" rx="12" ry="14" fill="#ef4444"/>
+    <circle cx="-3" cy="-7" r="1.5" fill="#ffffff"/>
+    <circle cx="3" cy="-7" r="1.5" fill="#ffffff"/>
+  </g>
+  <!-- Green Bear -->
+  <g transform="translate(100, 150)">
+    <circle cx="0" cy="-6" r="10" fill="#22c55e"/>
+    <circle cx="-8" cy="-14" r="4" fill="#22c55e"/>
+    <circle cx="8" cy="-14" r="4" fill="#22c55e"/>
+    <ellipse cx="0" cy="8" rx="12" ry="14" fill="#22c55e"/>
+    <circle cx="-3" cy="-7" r="1.5" fill="#ffffff"/>
+    <circle cx="3" cy="-7" r="1.5" fill="#ffffff"/>
+  </g>
+  <!-- Orange Bear -->
+  <g transform="translate(130, 138)">
+    <circle cx="0" cy="-6" r="10" fill="#f97316"/>
+    <circle cx="-8" cy="-14" r="4" fill="#f97316"/>
+    <circle cx="8" cy="-14" r="4" fill="#f97316"/>
+    <ellipse cx="0" cy="8" rx="12" ry="14" fill="#f97316"/>
+    <circle cx="-3" cy="-7" r="1.5" fill="#ffffff"/>
+    <circle cx="3" cy="-7" r="1.5" fill="#ffffff"/>
+  </g>
+  <!-- Sugar Warning Hint on bag -->
+  <rect x="55" y="176" width="90" height="15" rx="7.5" fill="#881337"/>
+  <text x="100" y="187" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="9" fill="#fecdd3">달콤 쫀득 50g</text>
+</svg>

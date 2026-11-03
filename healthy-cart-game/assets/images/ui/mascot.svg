@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <radialGradient id="squirrelFur" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </radialGradient>
+    <radialGradient id="bellyGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </radialGradient>
+  </defs>
+  <!-- Tail -->
+  <path d="M 30 75 C 10 70 5 35 25 25 C 45 15 48 35 38 55 Z" fill="#ea580c"/>
+  <path d="M 28 65 C 15 60 12 38 25 32 C 38 25 40 40 33 55 Z" fill="#fed7aa"/>
+  <!-- Body (Lab coat) -->
+  <ellipse cx="60" cy="85" rx="30" ry="26" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <!-- Coat collar and tie -->
+  <path d="M 50 65 L 60 82 L 70 65" fill="#e2e8f0"/>
+  <polygon points="60,70 63,85 60,90 57,85" fill="#ef4444"/>
+  <!-- Head -->
+  <circle cx="60" cy="50" r="26" fill="url(#squirrelFur)"/>
+  <!-- Ears -->
+  <polygon points="40,34 34,16 50,26" fill="#ea580c"/>
+  <polygon points="41,30 37,20 47,26" fill="#fecaca"/>
+  <polygon points="80,34 86,16 70,26" fill="#ea580c"/>
+  <polygon points="79,30 83,20 73,26" fill="#fecaca"/>
+  <!-- Cheeks -->
+  <circle cx="48" cy="58" r="6" fill="#fecdd3" opacity="0.8"/>
+  <circle cx="72" cy="58" r="6" fill="#fecdd3" opacity="0.8"/>
+  <ellipse cx="60" cy="58" rx="14" ry="10" fill="url(#bellyGrad)"/>
+  <!-- Nose and Mouth -->
+  <polygon points="57,54 63,54 60,57" fill="#78350f"/>
+  <path d="M 56 59 Q 60 63 64 59" fill="none" stroke="#78350f" stroke-width="2" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <circle cx="48" cy="46" r="4" fill="#1e293b"/>
+  <circle cx="50" cy="44" r="1.5" fill="#ffffff"/>
+  <circle cx="72" cy="46" r="4" fill="#1e293b"/>
+  <circle cx="74" cy="44" r="1.5" fill="#ffffff"/>
+  <!-- Cute Glasses -->
+  <circle cx="48" cy="47" r="9" fill="none" stroke="#0284c7" stroke-width="2.5"/>
+  <circle cx="72" cy="47" r="9" fill="none" stroke="#0284c7" stroke-width="2.5"/>
+  <line x1="57" y1="47" x2="63" y2="47" stroke="#0284c7" stroke-width="2.5"/>
+  <!-- Paws holding apple -->
+  <circle cx="46" cy="80" r="6" fill="#fb923c"/>
+  <circle cx="74" cy="80" r="6" fill="#fb923c"/>
+  <!-- Little Green Apple in hand -->
+  <circle cx="76" cy="84" r="8" fill="#22c55e"/>
+  <path d="M 76 76 Q 79 73 81 74" fill="none" stroke="#65a30d" stroke-width="2"/>
+  <!-- Stethoscope -->
+  <path d="M 44 72 Q 40 92 60 98 Q 80 92 76 72" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="60" cy="98" r="4" fill="#94a3b8" stroke="#0284c7" stroke-width="1.5"/>
+</svg>

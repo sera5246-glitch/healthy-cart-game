@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140">
+  <defs>
+    <linearGradient id="girlDress" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+  </defs>
+  <!-- Pigtails hair back -->
+  <circle cx="24" cy="48" r="14" fill="#451a03"/>
+  <circle cx="96" cy="48" r="14" fill="#451a03"/>
+  <!-- Hair ties -->
+  <circle cx="33" cy="44" r="4" fill="#facc15"/>
+  <circle cx="87" cy="44" r="4" fill="#facc15"/>
+  <!-- Body -->
+  <ellipse cx="60" cy="95" rx="28" ry="26" fill="url(#girlDress)"/>
+  <path d="M 44 74 L 42 110 M 76 74 L 78 110" stroke="#fef08a" stroke-width="4" stroke-linecap="round"/>
+  <!-- White Collar -->
+  <ellipse cx="53" cy="73" rx="8" ry="5" fill="#ffffff"/>
+  <ellipse cx="67" cy="73" rx="8" ry="5" fill="#ffffff"/>
+  <!-- Neck -->
+  <rect x="54" y="62" width="12" height="12" rx="4" fill="#fed7aa"/>
+  <!-- Face -->
+  <circle cx="60" cy="46" r="26" fill="#ffedd5"/>
+  <!-- Front Bangs -->
+  <path d="M 34 42 C 34 18 86 18 86 42 C 78 32 68 36 60 32 C 52 36 42 32 34 42 Z" fill="#451a03"/>
+  <!-- Eyes -->
+  <circle cx="49" cy="46" r="4" fill="#0f172a"/>
+  <circle cx="50.5" cy="44.5" r="1.5" fill="#ffffff"/>
+  <circle cx="71" cy="46" r="4" fill="#0f172a"/>
+  <circle cx="72.5" cy="44.5" r="1.5" fill="#ffffff"/>
+  <!-- Cheeks -->
+  <ellipse cx="42" cy="53" rx="5" ry="3" fill="#fda4af" opacity="0.8"/>
+  <ellipse cx="78" cy="53" rx="5" ry="3" fill="#fda4af" opacity="0.8"/>
+  <!-- Smile -->
+  <path d="M 54 54 Q 60 61 66 54" fill="none" stroke="#9a3412" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Hands -->
+  <circle cx="42" cy="108" r="7" fill="#ffedd5" stroke="#fdba74" stroke-width="1.5"/>
+  <circle cx="78" cy="108" r="7" fill="#ffedd5" stroke="#fdba74" stroke-width="1.5"/>
+</svg>

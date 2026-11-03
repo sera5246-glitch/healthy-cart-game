@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="ricePackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#fcd34d"/>
+    </linearGradient>
+    <filter id="riceShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <!-- Pouch Body -->
+  <path d="M 40 40 L 160 40 L 155 200 L 45 200 Z" fill="url(#ricePackGrad)" filter="url(#riceShadow)"/>
+  <rect x="40" y="32" width="120" height="12" fill="#d97706"/>
+  <!-- Rice Cracker Discs -->
+  <g transform="translate(100, 130)">
+    <circle cx="-15" cy="5" r="30" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+    <circle cx="15" cy="-8" r="28" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+    <!-- Rice puff texture dots -->
+    <circle cx="10" cy="-15" r="2" fill="#ca8a04"/>
+    <circle cx="24" cy="-5" r="2.5" fill="#ca8a04"/>
+    <circle cx="14" cy="5" r="2" fill="#ca8a04"/>
+    <circle cx="-12" cy="-2" r="2" fill="#ca8a04"/>
+    <circle cx="-25" cy="8" r="2" fill="#ca8a04"/>
+    <circle cx="-8" cy="18" r="2.5" fill="#ca8a04"/>
+  </g>
+  <!-- Green Organic Sprout -->
+  <circle cx="100" cy="56" r="10" fill="#16a34a"/>
+  <path d="M 96 58 Q 100 48 104 58 Z" fill="#ffffff"/>
+  <!-- Label -->
+  <rect x="52" y="70" width="96" height="26" rx="6" fill="#ffffff"/>
+  <text x="100" y="88" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="14" fill="#78350f">유기농 현미 쌀과자</text>
+  <rect x="62" y="176" width="76" height="16" rx="8" fill="#15803d"/>
+  <text x="100" y="188" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="800" font-size="9" fill="#ffffff">기름 無 30g</text>
+</svg>

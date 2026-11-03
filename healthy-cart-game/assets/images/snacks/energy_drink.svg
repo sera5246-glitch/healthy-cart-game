@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="energyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <filter id="energyShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Can Rim -->
+  <ellipse cx="100" cy="40" rx="42" ry="12" fill="#94a3b8" filter="url(#energyShadow)"/>
+  <ellipse cx="100" cy="38" rx="36" ry="9" fill="#cbd5e1"/>
+  <!-- Can Body -->
+  <path d="M 58 40 L 58 190 Q 100 206 142 190 L 142 40 Q 100 28 58 40 Z" fill="url(#energyGrad)" filter="url(#energyShadow)"/>
+  <!-- Neon Lightning Graphic -->
+  <polygon points="108,60 84,110 102,110 92,160 126,102 106,102" fill="#22c55e" stroke="#86efac" stroke-width="2"/>
+  <!-- Neon Text -->
+  <text x="100" y="80" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="16" fill="#facc15">POWER</text>
+  <text x="100" y="145" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="16" fill="#22c55e">ENERGY</text>
+  <!-- High Caffeine Warning Badge -->
+  <rect x="58" y="165" width="84" height="18" rx="9" fill="#ef4444"/>
+  <text x="100" y="178" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="9" fill="#ffffff">고카페인 주의 250ml</text>
+</svg>

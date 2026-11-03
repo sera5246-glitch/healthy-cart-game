@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <defs>
+    <linearGradient id="popTub" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="25%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#ef4444"/>
+      <stop offset="75%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <filter id="popShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Popcorn Cup/Tub -->
+  <polygon points="46,80 154,80 142,205 58,205" fill="url(#popTub)" stroke="#b91c1c" stroke-width="2" filter="url(#popShadow)"/>
+  <!-- Popcorn Overflowing Top -->
+  <g transform="translate(100, 75)">
+    <!-- Fluffy popped corn bits -->
+    <circle cx="-32" cy="-15" r="14" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5"/>
+    <circle cx="32" cy="-15" r="14" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5"/>
+    <circle cx="-16" cy="-28" r="16" fill="#facc15" stroke="#ca8a04" stroke-width="1.5"/>
+    <circle cx="16" cy="-28" r="16" fill="#fde047" stroke="#ca8a04" stroke-width="1.5"/>
+    <circle cx="0" cy="-40" r="18" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5"/>
+    <!-- Caramel drizzle -->
+    <path d="M -20 -35 Q -5 -25 5 -38 Q 20 -28 30 -30" fill="none" stroke="#78350f" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="-10" cy="-10" r="14" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5"/>
+    <circle cx="12" cy="-10" r="14" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5"/>
+  </g>
+  <!-- Tub Label Ribbon -->
+  <rect x="52" y="120" width="96" height="30" rx="6" fill="#ffffff" stroke="#b91c1c" stroke-width="2"/>
+  <text x="100" y="136" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="12" fill="#b45309">달콤 카라멜</text>
+  <text x="100" y="148" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="900" font-size="13" fill="#b91c1c">팝콘</text>
+  <rect x="62" y="180" width="76" height="16" rx="8" fill="#78350f"/>
+  <text x="100" y="192" text-anchor="middle" font-family="'Pretendard', sans-serif" font-weight="800" font-size="9" fill="#ffffff">극장용 70g</text>
+</svg>
